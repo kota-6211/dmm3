@@ -16,7 +16,7 @@ class PostImagesController < ApplicationController
 
 
   def index
-    @post_images = PostImage.all
+    @post_images = PostImage.page(params[:page])
   end
   def destroy
     @post_image = PostImage.find_by(id: params[:id])
